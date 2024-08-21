@@ -11,6 +11,7 @@ jobs:
 
     env:
       DOCKERHUB_USERNAME: bmo75
+      IMAGE_REPO_NAME: python-starwars-api
 
     steps:
     - name: Checkout code
@@ -31,7 +32,5 @@ jobs:
         context: .
         file: Dockerfile
         push: true
-        tags: ${{ env.DOCKERHUB_USERNAME }}/python-starwars-api:latest
-
-    - name: Image digest
-      run: echo "Docker image digest: ${{ steps.build-push.outputs.digest }}"
+        tags: ${{ env.DOCKERHUB_USERNAME }}/${{ env.IMAGE_REPO_NAME }}:latest\
+        
