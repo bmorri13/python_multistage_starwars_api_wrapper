@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 def get_swapi_url(endpoint, search_term):
-    swapi_url = f'https://swapi.dev/api/{endpoint}/'
+    swapi_url = f'https://swapi.py4e.com/api/{endpoint}/'
     if search_term:
         swapi_url += f'?search={search_term}'
 
